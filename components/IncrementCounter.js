@@ -16,7 +16,7 @@ const IncrementCounter = () => {
       
       <Button
         title = '+3'
-        onPress={()=>setAge(age+3)}
+        onPress={()=> {increment(); increment() ;increment()}}
       />
 
       <Text>{'\n'}</Text>
