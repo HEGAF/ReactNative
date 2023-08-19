@@ -1,36 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native';
-import ViewBoxesWIthColorAndText from './components/ViewBoxesWIthColorAndText';
-import DisplayandImage from './components/DisplayandImage';
-import LotsOfGreeting from './components/LotsOfGreeting';
-import CustomText from './components/CustomText';
-import Counter from './components/Counter';
-import MyInput from './components/MyInput';
-import IncrementCounter from './components/IncrementCounter';
-import Form from './components/Form';
-import Login from './components/Login';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import TouchableExample from './components/TouchableExample'
+import RandomUsersScreen from './components/RandomUsersScreen'
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      {/* <ViewBoxesWIthColorAndText/> */}
-      {/* <DisplayandImage/> */}
-      {/* <LotsOfGreeting/> */}
-      {/* <CustomText/> */}
-      {/* <Counter/> */}
-      {/* <MyInput/> */}
-      {/* {<IncrementCounter/>} */}
-      {/* {<Form/>} */}
-      <Login/>
+      {/* <TouchableExample/> */}
+      <RandomUsersScreen/>
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
 
+const styles = StyleSheet.create({
+  container:{
+    flex : 1,
+    alignItems: 'center'
+  }
+})

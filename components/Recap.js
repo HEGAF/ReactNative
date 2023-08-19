@@ -20,7 +20,7 @@ const Login = () => {
         }
 
         else{
-            alert('Success');
+            alert('email: ' + email + '\n' + 'password: ' +name);
             return;
         }
     }
@@ -33,7 +33,7 @@ const Login = () => {
         <TextInput
 
             placeholder = 'Enter Name'
-            style = {styles.textInputStyle}
+            style = {styles.input}
             value = {name}
             onChangeText = { (value) => {setName(value)} }
 
@@ -42,7 +42,7 @@ const Login = () => {
         <TextInput
 
             placeholder = 'Enter Email'
-            style = {styles.textInputStyle}
+            style = {styles.input}
             value = {email}
             onChangeText = { (value) => {setEmail(value)} }
 
@@ -52,8 +52,9 @@ const Login = () => {
 
         <Button
             title = 'SUBMIT'
+            style = {styles.submitButton}
             onPress={()=>{
-                checkTextInput()
+                alert('email: ' + email + '\n' + 'password: ' +name);
             }}
         />
 
@@ -63,17 +64,25 @@ const Login = () => {
 
 export default Login
 
-const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        padding: 35,
-    },
-    textInputStyle: {
-        width:'100%',
-        height: 40,
-        paddingHorizontal: 5,
-        borderWidth: 0.5,
-        marginTop: 15,
-    }, 
+const styles =  StyleSheet.create({
+    container : {
+        paddingTop :23
     
+    },
+    input : {
+        margin : 15,
+        height: 40,
+        borderColor : '#7a42f4',
+        borderWidth : 1
+    },
+    submitButton: {
+        backgroundColor : '#7a42f4',
+        padding : 10,
+        margin : 15,
+        height : 40,
+    },
+    submitButtonText : {
+        color: 'black'
+    }
+
 })
