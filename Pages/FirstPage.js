@@ -6,8 +6,8 @@ function HomeScreen({navigation}){
       <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
         <Text>This is First Page of the App</Text>
         <Button
-          title='Go to Details'
-          onPress={()=>navigation.navigate('Details')}
+          title='Go to SecondPage'
+          onPress={()=>navigation.navigate('SecondPage')}
         />
       </View>
     );

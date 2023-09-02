@@ -4,19 +4,20 @@ import React from 'react';
 function DetailsScreen({navigation}){
     return(
       <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-        <Text>Detail Screen</Text>
-        <Button
-          title='Go to Details...again'
-          onPress={()=>navigation.push('Details')}
-        />
-        <Button
-          title='Go to Home'
-          onPress={()=>navigation.navigation('Home')}
-        />
+        <Text>This is Third Page of the App</Text>
         <Button
           title='Go back'
           onPress={()=>navigation.goBack()}
         />
+        <Button
+          title='Go to SecondPage'
+          onPress={()=>navigation.push('SecondPage')}
+        />
+        <Button
+          title='Reset navigation to first page'
+          onPress={()=>navigation.navigate('FirstPage')}
+        />
+        
       </View>
     );
   }
