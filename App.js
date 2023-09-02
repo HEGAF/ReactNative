@@ -1,30 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import TouchableExample from './components/TouchableExample'
-import RandomUsersScreen from './components/RandomUsersScreen'
-import FlatList_Example1 from './components/FlatList_Example1'
-import FlatList_HeaderFooter from './components/FlatList_HeaderFooter'
-import FlastListAPI from './FlastListAPI'
-import News from './News'
+import { StyleSheet, Text , Button, View} from 'react-native';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {HomeScreen} from '.\screen\HomeScreen.js';
+import {DetailsScreen} from '.\screen\DetailsScreen.js';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      {/* <TouchableExample/> */}
-      {/* <RandomUsersScreen/> */}
-      {/* <FlatList_Example1/> */}
-      {/* <FlatList_HeaderFooter/> */}
-      {/* <FlastListAPI/> */}
-      <News/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen 
+          name='Home' 
+          component={HomeScreen} 
+          options={{title:'Overview'}}
+        />
+        <Stack.Screen name ='Details' component={DetailsScreen}/>
+      </Stack.Navigator>
+
+    </NavigationContainer>
   )
 }
 
-export default App
-
-const styles = StyleSheet.create({
-  container:{
-    flex : 1,
-    alignItems: 'left'
-  }
-})
+export default App;
