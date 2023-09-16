@@ -1,48 +1,48 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import FirstPage from './Pages/FirstPage.js';
-import SecondPage from './Pages/SecondPage.js';
-import ThirdPage from './Pages/ThirdPage.js';
+import {View, Text} from 'react-native'
+import React from 'react'
 
-const Stack = createNativeStackNavigator();
+import {NavigationContainer} from "@react-navigation/native"
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="FirstPage"
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#008b8b',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            fontSize: 14,
-          },
-        }}
-      >
-        <Stack.Screen
-          name='FirstPage'
-          component={FirstPage}
-          options={{ title: 'FirstPage' }}
-        />
-        <Stack.Screen
-          name='SecondPage'
-          component={SecondPage}
-          options={{ title: 'SecondPage' }}
-        />
-        <Stack.Screen
-          name='ThirdPage'
-          component={ThirdPage}
-          options={{ title: 'ThirdPage' }}
-        />
-        
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+
+function HomeScreen() {
+    return (
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Home</Text>
+        </View>
+    )
 }
 
-export default App;
+
+function SettingScreen() {
+    return (
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Settings!</Text>
+        </View>
+    )
+}
+
+
+// HomeScreen และ SettingScreen ตามเดิม
+
+const Tab = createBottomTabNavigator();
+
+function MyTab() {
+    return (
+        <Tab.Navigator>
+            <Tab.Screen name="Home" component={HomeScreen}/>
+            <Tab.Screen name='Settings' component={SettingScreen}/>
+        </Tab.Navigator>
+    )
+}
+
+const App = () => {
+    return (
+        <NavigationContainer>
+            <MyTab />
+        </NavigationContainer>
+    )
+}
+
+export default App
+ 
